@@ -2,7 +2,7 @@ import React from "react";
 import Doctor from "../../../images/doctor.jpg";
 const DoctorInfo = () => {
   return (
-    <div className="flex items-center p-16 bg-sky-300">
+    <div className="md:flex items-center p-16 bg-sky-300">
       <div className="p-4">
         <h1 className="text-2xl pb-3 ">Hello My Name Dr.ArafathM.D, PH.D</h1>
         <p>
