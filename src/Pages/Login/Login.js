@@ -1,9 +1,14 @@
 import React, { useRef } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -14,18 +19,27 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
   const handleUserSignIn = (event) => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
     event.preventDefault();
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   };
-  if (loading) {
+  const handleResetPassword = async () => {
+    const email = emailRef.current.value;
+
+    await sendPasswordResetEmail(email);
+    toast("Sent email");
+  };
+  let errorText;
+  if (loading || sending) {
     return <Loading />;
   }
   if (error) {
-    return alert(error?.message);
+    errorText = <p className="text-red-600 text-center">{error?.message}</p>;
   }
   return (
     <div>
@@ -43,6 +57,7 @@ const Login = () => {
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="email"
+                required
                 ref={emailRef}
               />
             </div>
@@ -56,6 +71,7 @@ const Login = () => {
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                 type="password"
+                required
                 ref={passwordRef}
               />
             </div>
@@ -73,13 +89,15 @@ const Login = () => {
               Create New Account
             </Link>{" "}
           </p>
-          <Link
-            className="flex justify-center text-lg font-bold text-blue-500 hover:text-blue-800"
-            to="/"
+          <button
+            onClick={handleResetPassword}
+            className="block mx-auto my-2 text-lg font-bold text-blue-500 hover:text-blue-800"
           >
             Forgot Password?
-          </Link>
+          </button>
+          {errorText}
           <SocialLogin />
+          <ToastContainer />
         </div>
       </div>
     </div>

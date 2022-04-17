@@ -34,7 +34,7 @@ const Register = () => {
         <h1 className="text-center text-3xl my-3">Please Register</h1>
         <form
           onSubmit={handleCreateUser}
-          className="bg-blue-200 shadow-md rounded px-8 pt-6 pb-8 mb-4 font-mono"
+          className="bg-blue-200 shadow-md rounded p-8 my-4 font-mono"
         >
           <div className="mb-4">
             <label
