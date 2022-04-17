@@ -1,5 +1,8 @@
 import React, { useRef } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { Link } from "react-router-dom";
 import { async } from "@firebase/util";
@@ -10,13 +13,18 @@ const Register = () => {
   const passwordRef = useRef("");
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const handleCreateUser = async (event) => {
+    const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
     event.preventDefault();
+    console.log(user);
   };
-  if (loading) {
+
+  if (loading || updating) {
     return (
       <div className="flex justify-center">
         <img
