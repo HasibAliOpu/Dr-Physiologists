@@ -7,6 +7,7 @@ import auth from "../../firebase.init";
 import { Link } from "react-router-dom";
 import { async } from "@firebase/util";
 import Loading from "../Loading/Loading";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const nameRef = useRef("");
@@ -108,6 +109,7 @@ const Register = () => {
               Login
             </Link>{" "}
           </p>
+          <SocialLogin />
         </form>
       </div>
     </div>
