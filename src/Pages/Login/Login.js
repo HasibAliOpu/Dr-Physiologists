@@ -21,12 +21,12 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
+
   const handleUserSignIn = (event) => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
     event.preventDefault();
-    // navigate(from, { replace: true });
   };
   const handleResetPassword = async () => {
     const email = emailRef.current.value;
@@ -40,6 +40,9 @@ const Login = () => {
   }
   if (error) {
     errorText = <p className="text-red-600 text-center">{error?.message}</p>;
+  }
+  if (user) {
+    navigate(from, { replace: true });
   }
   return (
     <div>
