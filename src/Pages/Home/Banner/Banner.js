@@ -5,7 +5,7 @@ import Banner3 from "../../../images/banner/banner3.jpg";
 
 const Banner = () => {
   return (
-    <div className="">
+    <div>
       <div
         id="carouselExampleCaptions"
         class="carousel slide relative"
