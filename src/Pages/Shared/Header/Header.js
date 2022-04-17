@@ -6,7 +6,6 @@ import auth from "../../../firebase.init";
 import Logo from "../../../images/icon/logo.png";
 const Header = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
   return (
     <div>
       <div className="flex items-center justify-between px-8 bg-blue-200">

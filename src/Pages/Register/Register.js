@@ -6,6 +6,7 @@ import {
 import auth from "../../firebase.init";
 import { Link } from "react-router-dom";
 import { async } from "@firebase/util";
+import Loading from "../Loading/Loading";
 
 const Register = () => {
   const nameRef = useRef("");
@@ -21,18 +22,10 @@ const Register = () => {
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
     event.preventDefault();
-    console.log(user);
   };
 
   if (loading || updating) {
-    return (
-      <div className="flex justify-center">
-        <img
-          src="https://cdn.dribbble.com/users/1252202/screenshots/6271180/loading_02.gif"
-          alt=""
-        />
-      </div>
-    );
+    return <Loading />;
   }
   return (
     <div>
