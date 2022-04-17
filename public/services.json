@@ -2,18 +2,21 @@
   {
     "id": "1",
     "name": "STRESS AND WORRY",
+    "price": "129",
     "img": "https://dtpsychiatrist.wpengine.com/wp-content/uploads/2017/05/psychiatriststory3.jpg",
-    "description": "PEveryone worries or feels nervous from time to time. Anxiety is a normal human reaction to stressful situations. But for people with anxiety disorders, those fears and worries aren't temporary. Their anxiety persists, and can even get worse over time.Anxiety disorders can severely impair a person's ability to function at work, school, and in social situations. Anxiety can also interfere with a person's relationships with family members and friends. Fortunately, though, there are effective treatments for anxiety."
+    "description": "Everyone worries or feels nervous from time to time. Anxiety is a normal human reaction to stressful situations. But for people with anxiety disorders, those fears and worries aren't temporary. Their anxiety persists, and can even get worse over time.Anxiety disorders can severely impair a person's ability to function at work, school, and in social situations. Anxiety can also interfere with a person's relationships with family members and friends. Fortunately, though, there are effective treatments for anxiety."
   },
   {
     "id": "2",
     "name": "FAMILY DIFFICULTIES",
+    "price": "109",
     "img": "https://dtpsychiatrist.wpengine.com/wp-content/uploads/2017/05/image-caption-3-1.jpg",
     "description": "Family issues refer to the point when conflict becomes especially intense or or frequent, to the point that it's interrupting your day-to-day life.Because family issues vary so much and are deeply personal, it's hard to say for sure how common they are.However, evidence suggests that various types of conflict within families are fairly common overall. "
   },
   {
     "id": "3",
     "name": "GRIEF AND LOSS",
+    "price": "149",
     "img": "https://dtpsychiatrist.wpengine.com/wp-content/uploads/2017/05/psychiatriststory1.jpg",
     "description": "Most people will experience loss at some point in their lives. Grief is a reaction to any form of loss. Bereavement is a type of grief involving the death of a loved one.Bereavement and grief encompass a range of feelings from deep sadness to anger. The process of adapting to a significant loss can vary dramatically from one person to another. It often depends on a person's background, beliefs, and relationship to what was lost."
   }
