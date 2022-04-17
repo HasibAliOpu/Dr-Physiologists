@@ -14,7 +14,7 @@ const Register = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const handleCreateUser = async (event) => {
     const name = nameRef.current.value;

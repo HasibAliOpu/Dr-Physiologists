@@ -19,12 +19,13 @@ const Login = () => {
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
     event.preventDefault();
+    navigate(from, { replace: true });
   };
   if (loading) {
     return <Loading />;
   }
-  if (user) {
-    navigate(from, { replace: true });
+  if (error) {
+    return alert(error?.message);
   }
   return (
     <div>
