@@ -1,16 +1,25 @@
 import React from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithGithub,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import github from "../../images/icon/github.png";
 import google from "../../images/icon/google.png";
 import Loading from "../Loading/Loading";
 
 const SocialLogin = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+  const [signInWithGithub, githubUser, githubLoading, githubError] =
+    useSignInWithGithub(auth);
   const handleSignInWithGoogle = () => {
     signInWithGoogle();
   };
-  if (loading) {
+  const handleSignInWithGithub = () => {
+    signInWithGithub();
+  };
+  if (googleLoading || githubLoading) {
     return <Loading />;
   }
   return (
@@ -29,6 +38,7 @@ const SocialLogin = () => {
         Continue with Google
       </button>
       <button
+        onClick={handleSignInWithGithub}
         className="flex justify-center items-center gap-2 py-3 w-full mx-auto bg-white
        border border-slate-500 rounded-md font-semibold"
       >
