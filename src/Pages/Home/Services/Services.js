@@ -9,7 +9,7 @@ const Services = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-center mt-6 font-mono font-semibold  text-3xl text-indigo-500">
+      <h1 className="text-center mt-14 font-mono font-semibold  text-3xl text-indigo-500">
         <span className="border-b-2 border-slate-700">
           Popular Therapy Services
         </span>
