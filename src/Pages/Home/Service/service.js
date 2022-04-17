@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const service = ({ service }) => {
-  const { name, img, price, description } = service;
+const Service = ({ service }) => {
+  const { id, name, img, price, description } = service;
+  const navigate = useNavigate();
   return (
     <div className="flex justify-center mt-4 ">
       <div className="rounded-lg shadow-lg bg-white max-w-sm">
@@ -18,6 +20,7 @@ const service = ({ service }) => {
             {description.slice(0, 270)}...
           </p>
           <button
+            onClick={() => navigate(`/checkout/${id}`)}
             className="bg-blue-300 hover:bg-blue-500 font-mono font-semibold text-xl
            w-full p-2 rounded-full text-white"
           >
@@ -29,4 +32,4 @@ const service = ({ service }) => {
   );
 };
 
-export default service;
+export default Service;
