@@ -72,8 +72,8 @@ const Banner = () => {
             <div className="carousel-caption hidden md:block absolute text-center">
               <h5 className="text-xl">Group Conservation</h5>
               <p>
-                We Have so many Patience Group.Your can talk them And it's
-                Giving you happiness
+                We Have so many Patient Group.Your can talk them And it's Giving
+                you happiness
               </p>
             </div>
           </div>

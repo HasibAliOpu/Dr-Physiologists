@@ -20,7 +20,7 @@ const CheckOut = () => {
 
   return (
     <div className="grid md:grid-cols-2">
-      <div className="p-16">
+      <div className="p-16 ">
         <img src={serviceDetail?.img} alt="" className="rounded-lg" />
         <h1 className="text-2xl my-2">{serviceDetail?.name}</h1>
         <h5 className=" text-xl font-medium  mb-2">
@@ -35,7 +35,7 @@ const CheckOut = () => {
         </p>
       </div>
       <div className="px-16">
-        <h1 className="text-center text-3xl my-3">User Information</h1>
+        <h1 className="text-center text-3xl my-3">Patient Information</h1>
         <form
           onSubmit={handleUserSubmit}
           className="bg-blue-200 shadow-md rounded p-8 my-4 font-mono"

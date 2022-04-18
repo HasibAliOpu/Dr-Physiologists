@@ -24,7 +24,7 @@ const Header = () => {
           <h1 className="text-xl text-blue-500">Dr Physiologists</h1>
         </span>
 
-        <div className="md:flex font-medium text-xl text-blue-600  mr-20">
+        <div className="md:flex font-medium text-lg text-blue-600  mr-20">
           <CustomLink to="/">Home</CustomLink>
           <CustomLink to="/about">About</CustomLink>
           <CustomLink to="/blogs">Blogs</CustomLink>
@@ -33,7 +33,7 @@ const Header = () => {
           ) : (
             <CustomLink to="/login">Login</CustomLink>
           )}
-          <p className="ml-2">{user?.displayName}</p>
+          <p className="ml-2 text-slate-600">{user?.displayName}</p>
         </div>
       </div>
     </div>
