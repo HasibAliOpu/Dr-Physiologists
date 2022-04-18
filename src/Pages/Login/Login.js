@@ -38,8 +38,12 @@ const Login = () => {
   if (loading || sending) {
     return <Loading />;
   }
-  if (error) {
-    errorText = <p className="text-red-600 text-center">{error?.message}</p>;
+  if (error || resetError) {
+    errorText = (
+      <p className="text-red-600 text-center">
+        {error?.message} {resetError?.message}
+      </p>
+    );
   }
   if (user) {
     navigate(from, { replace: true });

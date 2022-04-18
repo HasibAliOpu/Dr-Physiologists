@@ -4,7 +4,7 @@ const Loading = () => {
   return (
     <div className="flex justify-center">
       <img
-        src="https://cdn.dribbble.com/users/1252202/screenshots/6271180/loading_02.gif"
+        src="https://media1.giphy.com/media/YMM6g7x45coCKdrDoj/giphy.gif?cid=790b76117f6dbfa3cb871225e2c81eb160f040646d124dbb&rid=giphy.gif&ct=s"
         alt=""
       />
     </div>

@@ -4,12 +4,15 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { async } from "@firebase/util";
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
   const nameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -24,7 +27,17 @@ const Register = () => {
     await updateProfile({ displayName: name });
     event.preventDefault();
   };
-
+  let errorText;
+  if (error || updateError) {
+    errorText = (
+      <p className="text-center text-red-600">
+        {error?.message} {updateError?.message}
+      </p>
+    );
+  }
+  if (user) {
+    navigate(from, { replace: true });
+  }
   if (loading || updating) {
     return <Loading />;
   }
@@ -94,6 +107,7 @@ const Register = () => {
               </label>
             </div>
           </div>
+          {errorText}
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold text-xl rounded 
             w-full h-12"

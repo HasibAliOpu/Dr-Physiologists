@@ -7,8 +7,12 @@ import auth from "../../firebase.init";
 import github from "../../images/icon/github.png";
 import google from "../../images/icon/google.png";
 import Loading from "../Loading/Loading";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
   const [signInWithGithub, githubUser, githubLoading, githubError] =
@@ -19,6 +23,9 @@ const SocialLogin = () => {
   const handleSignInWithGithub = () => {
     signInWithGithub();
   };
+  if (githubUser || googleUser) {
+    navigate(from, { replace: true });
+  }
   if (googleLoading || githubLoading) {
     return <Loading />;
   }
