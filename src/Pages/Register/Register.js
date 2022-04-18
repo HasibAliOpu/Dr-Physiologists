@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { async } from "@firebase/util";
+
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
@@ -35,9 +35,12 @@ const Register = () => {
       </p>
     );
   }
-  if (user) {
-    navigate(from, { replace: true });
-  }
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, navigate, from]);
+
   if (loading || updating) {
     return <Loading />;
   }

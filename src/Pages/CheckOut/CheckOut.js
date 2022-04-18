@@ -1,29 +1,40 @@
-import { async } from "@firebase/util";
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const CheckOut = () => {
   const { checkoutId } = useParams();
-  /* const [service, setService] = useState([]);
+  const [service, setService] = useState([]);
   useEffect(() => {
-    async function fetchMyAPI() {
-      let response = await fetch("services.json");
-      response = await response.json();
-      setService(response);
-    }
-
-    fetchMyAPI();
-  }, []); */
-
-  const handleUserSubmit = () => {
-    toast("Thank Your for booking");
+    fetch(process.env.PUBLIC_URL + "/services.json")
+      .then((res) => res.json())
+      .then((data) => setService(data));
+  }, []);
+  const serviceDetail = service.find((item) => item.id === checkoutId);
+  const handleUserSubmit = (event) => {
+    event.preventDefault();
+    toast("Thank You for booking");
   };
 
   return (
-    <div>
-      <div className="md:w-1/2  mx-auto md:px-16">
+    <div className="grid md:grid-cols-2">
+      <div className="p-16">
+        <img src={serviceDetail?.img} alt="" className="rounded-lg" />
+        <h1 className="text-2xl my-2">{serviceDetail?.name}</h1>
+        <h5 className=" text-xl font-medium  mb-2">
+          Therapy Price:{" "}
+          <span className="text-yellow-400">
+            ${serviceDetail?.price}.0/<sub>mo</sub>{" "}
+          </span>
+        </h5>
+        <p>
+          {" "}
+          <small>{serviceDetail?.description}</small>{" "}
+        </p>
+      </div>
+      <div className="px-16">
         <h1 className="text-center text-3xl my-3">User Information</h1>
         <form
           onSubmit={handleUserSubmit}

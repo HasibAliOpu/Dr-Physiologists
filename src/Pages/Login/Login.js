@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -34,6 +34,12 @@ const Login = () => {
     await sendPasswordResetEmail(email);
     toast("Sent email");
   };
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, navigate, from]);
+
   let errorText;
   if (loading || sending) {
     return <Loading />;
@@ -45,9 +51,7 @@ const Login = () => {
       </p>
     );
   }
-  if (user) {
-    navigate(from, { replace: true });
-  }
+
   return (
     <div>
       <div className="md:w-1/2  mx-auto md:px-16">
