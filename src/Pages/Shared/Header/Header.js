@@ -26,8 +26,8 @@ const Header = () => {
 
         <div className="md:flex font-medium text-lg text-blue-600  mr-20">
           <CustomLink to="/">Home</CustomLink>
-          <CustomLink to="/about">About</CustomLink>
           <CustomLink to="/blogs">Blogs</CustomLink>
+          <CustomLink to="/about">About</CustomLink>
           {user ? (
             <button onClick={() => signOut(auth)}>Log Out</button>
           ) : (

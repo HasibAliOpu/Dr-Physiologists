@@ -9,9 +9,9 @@ const Blogs = () => {
           Authentication Vs Authorization
         </span>
       </h1>
-      <div className="grid grid-cols-2 p-8">
+      <div className="grid md:grid-cols-2 p-8">
         <div className="p-4">
-          <h1>Authentication</h1>
+          <h1 className="text-lg">Authentication</h1>
           <li>Authentication verifies who the user is.</li>
           <li>
             Authentication works through passwords, one-time pins, and other
@@ -26,7 +26,7 @@ const Blogs = () => {
           </li>
         </div>
         <div className="p-4">
-          <h1>Authorization</h1>
+          <h1 className="text-lg">Authorization</h1>
           <li>Authorization determines what resources a user can access.</li>
           <li>
             Authorization works through settings that are implemented and
