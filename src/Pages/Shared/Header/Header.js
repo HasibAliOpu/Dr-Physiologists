@@ -10,15 +10,22 @@ const Header = () => {
   const [user] = useAuthState(auth);
   const [open, setOpen] = useState(false);
   return (
-    <div>
-      <div onClick={() => setOpen(!open)} className="md:hidden text-2xl">
+    <div className={`${open ? "mb-60" : ""}`}>
+      <div
+        onClick={() => setOpen(!open)}
+        className="md:hidden text-2xl pl-2 bg-blue-200"
+      >
         {open ? (
           <FontAwesomeIcon icon={faXmark} />
         ) : (
           <FontAwesomeIcon icon={faBars} />
         )}
       </div>
-      <div className="md:flex items-center justify-between px-8 bg-blue-200">
+      <div
+        className={`md:flex items-center justify-between px-8 bg-blue-200 md:static w-full absolute ${
+          open ? "top-18" : "top-[-300px]"
+        }`}
+      >
         <span className="md:flex items-center">
           <img src={Logo} className="w-14 h-14" alt="" />
           <h1 className="text-xl text-blue-500">Dr Physiologists</h1>

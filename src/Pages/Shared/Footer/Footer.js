@@ -2,22 +2,22 @@ import React from "react";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../../../images/icon/logo.png";
-import { Link } from "react-router-dom";
+import CustomLink from "../../../CustomLink/CustomLink";
 
 const Footer = () => {
   return (
     <div className="bg-slate-800 w-full">
       <div className="flex justify-center items-center gap-6 pt-4">
         <img src={Logo} alt="" className="w-1/12" />
-        <div className="text-white flex gap-8 text-lg">
-          <Link to="/">HOME</Link>
-          <Link to="/blogs">Blogs</Link>
-          <Link to="/about">About</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
+        <div className="text-white md:flex gap-8 text-xs md:text-lg">
+          <CustomLink to="/">HOME</CustomLink>
+          <CustomLink to="/blogs">Blogs</CustomLink>
+          <CustomLink to="/about">About</CustomLink>
+          <CustomLink to="/login">Login</CustomLink>
+          <CustomLink to="/register">Register</CustomLink>
         </div>
       </div>
-      <div className="text-center text-white text-xl">
+      <div className="text-center text-white text-xs md:text-xl">
         <h1>OUR OFFICES</h1>
         <div className="flex justify-center gap-6 mt-6">
           <p className="border-r-2 pr-3 hover:text-orange-400">SINGAPORE</p>

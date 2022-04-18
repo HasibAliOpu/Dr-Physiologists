@@ -27,12 +27,12 @@ const Login = () => {
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
     event.preventDefault();
+    toast("Sent email");
   };
   const handleResetPassword = async () => {
     const email = emailRef.current.value;
-
     await sendPasswordResetEmail(email);
-    toast("Sent email");
+    toast("Sending Email");
   };
   useEffect(() => {
     if (user) {
@@ -41,7 +41,7 @@ const Login = () => {
   }, [user, navigate, from]);
 
   let errorText;
-  if (loading || sending) {
+  if (loading) {
     return <Loading />;
   }
   if (error || resetError) {
