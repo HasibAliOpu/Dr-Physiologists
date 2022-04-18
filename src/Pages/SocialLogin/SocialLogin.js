@@ -23,6 +23,15 @@ const SocialLogin = () => {
   const handleSignInWithGithub = () => {
     signInWithGithub();
   };
+  let errorText;
+  if (githubError || googleError) {
+    errorText = (
+      <p className="text-red-600 text-center">
+        {githubError?.message}
+        {googleError?.message}
+      </p>
+    );
+  }
   if (githubUser || googleUser) {
     navigate(from, { replace: true });
   }
@@ -36,6 +45,7 @@ const SocialLogin = () => {
         <p className="mx-4 font-semibold text-blue-900">OR</p>
         <div style={{ height: "1px" }} className="w-1/2 bg-blue-600"></div>
       </div>
+      {errorText}
       <button
         onClick={handleSignInWithGoogle}
         className="flex justify-center items-center gap-2 my-2 py-3 w-full mx-auto bg-white

@@ -1,20 +1,30 @@
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import CustomLink from "../../../CustomLink/CustomLink";
 import auth from "../../../firebase.init";
 import Logo from "../../../images/icon/logo.png";
 const Header = () => {
   const [user] = useAuthState(auth);
+  const [open, setOpen] = useState(false);
   return (
     <div>
-      <div className="flex items-center justify-between px-8 bg-blue-200">
-        <span className="flex items-center">
+      <div onClick={() => setOpen(!open)} className="md:hidden text-2xl">
+        {open ? (
+          <FontAwesomeIcon icon={faXmark} />
+        ) : (
+          <FontAwesomeIcon icon={faBars} />
+        )}
+      </div>
+      <div className="md:flex items-center justify-between px-8 bg-blue-200">
+        <span className="md:flex items-center">
           <img src={Logo} className="w-14 h-14" alt="" />
           <h1 className="text-xl text-blue-500">Dr Physiologists</h1>
         </span>
 
-        <div className="flex font-medium mr-20">
+        <div className="md:flex font-medium text-xl text-blue-600  mr-20">
           <CustomLink to="/">Home</CustomLink>
           <CustomLink to="/about">About</CustomLink>
           <CustomLink to="/blogs">Blogs</CustomLink>
