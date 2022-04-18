@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# DR Physiologist
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site Link [Dr-Physiologists](https://dr-physiologists.web.app/)
 
-## Available Scripts
+Welcome to Physiologists doctor website..
 
-In the project directory, you can run:
+- On the home page, you can see the carousel banner/doctor-info/Services.
+- At the bottom of the doc-info also see the (Check out) button.
+- if you click the button it lets you go to the check Out route,
+- it's a private route, first of all you have to login then you go to the check out route.
+- on the check out route you can see the 2 item, (1)Selected service details and (2) a patient information form.
+- if you submit the form then you see the roast(Thank you for booking)
 
-### `npm start`
+- on the Blogs page, it's a Q&A page. I have given an answer to some questions.
+- and the about page, the About route. On this page, you can see some details about me.
+- on login route, we have a simple login form, you can login with EmailandPassword or github/google
+- we have a forget password authentication..if you click the forget password then you got a roast and a email
+- if you don't have user id...then you go to register route and register your user id, login and register almost similar.
+- on the footer i build the navigate system..so you can navigate the route on the footer
+- and I also created a 404 page...on this page, you can see a funny 404 error image.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Using Technologies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Tailwind
+- Tailwind-Elements (for carousel)
+- firebase
+- React-Firebase-Hook
+- React-Toastify
+- React-Router
+- FontAwesome
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## I Hope you Enjoying to Exploring Website, Thank You For Visiting..!!
